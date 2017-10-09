@@ -26,8 +26,9 @@ class Weather extends Component {
             })
           })
         }
-        
   }
+
+
   componentWillUpdate(nextProps,nextState){
     console.log(nextState.longitude)
     console.log(nextState.latitude)
@@ -42,16 +43,16 @@ class Weather extends Component {
     }
   }
 
-  toggle = () => {
-    console.log("I've been clicked!")
-  }
+  // celcius = () => {
+  //   console.log("I've been clicked!")
+  // }
 
   render() {
 
     return (
 
       <div className="Drop-down">
-        <div className="Weather" onClick={this.toggle}>
+        <div className="Weather">
 
           {this.state.weather ? (<h1 id="Temp">{`${Math.round(this.state.weather.currently.temperature)}\xB0`}</h1>) : (<i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
 )}
@@ -59,11 +60,6 @@ class Weather extends Component {
           {this.state.weather ? (<h1 id="Type">{this.state.weather.currently.icon}</h1>) : (<p></p>
 )}
 
-            {/* <div id="MyDropdown" className="Dropdown-content">
-              <a>Home</a>
-              <a>About</a>
-              <a>Contact</a>
-            </div> */}
 
         </div>
       </div>
